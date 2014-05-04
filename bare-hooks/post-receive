@@ -10,9 +10,9 @@ elif [ ! -e $WORK_DIR ];then
 fi
 
 if [ -e $WORK_DIR/.git ];then
-    WORK_DIR=$WORK_DIR/.git
+    WORK_GIT_DIR=$WORK_DIR/.git
 fi
 
-git --git-dir=$WORK_DIR fetch
-git --git-dir=$WORK_DIR reset --hard origin/HEAD
+git --git-dir=$WORK_GIT_DIR fetch
+git --git-dir=$WORK_GIT_DIR --work-tree=$WORK_DIR reset --hard origin/HEAD
 
